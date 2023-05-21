@@ -17,7 +17,7 @@ public class UpdateBrandCommand : IRequest<UpdatedBrandResponse>, ISecuredReques
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }
-    public string CacheGroupKey => "GetBrands";
+    public string[] CacheGroupKey => new[] { CacheGroupKeyValue.BrandCacheGroupKey, CacheGroupKeyValue.ModelCacheGroupKey };
 
     public string[] Roles => new[] { Admin, Write, BrandsOperationClaims.Update };
 

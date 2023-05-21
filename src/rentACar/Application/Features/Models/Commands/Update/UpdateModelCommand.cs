@@ -21,7 +21,7 @@ public class UpdateModelCommand : IRequest<UpdatedModelResponse>, ISecuredReques
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }
-    public string CacheGroupKey => "GetModels";
+    public string[] CacheGroupKey => new[] { CacheGroupKeyValue.ModelCacheGroupKey };
 
     public string[] Roles => new[] { Admin, Write, ModelsOperationClaims.Update };
 

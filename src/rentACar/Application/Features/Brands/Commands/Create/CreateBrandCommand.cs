@@ -15,7 +15,7 @@ public class CreateBrandCommand : IRequest<CreatedBrandResponse>, ISecuredReques
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }
-    public string CacheGroupKey => "GetBrands";
+    public string[] CacheGroupKey => new[] { CacheGroupKeyValue.BrandCacheGroupKey };
 
     public string[] Roles => new[] { Admin, Write, Add };
 
